@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail_Page</title>
+    <style>
+        body{text-align: center;}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>{{article.id}}. {{article.title}}</h1>
+        <h4>작성자 : {{article.writer}} </h4>
+        <h4>작성일 : {{article.pub_date}} </h4>
+    </div>
+    <hr><br>
+    <p>{{article.body}}</p>
+    <br><br>
+    <a href="{%url 'home'%}">홈으로</a>
+</body>
+</html>

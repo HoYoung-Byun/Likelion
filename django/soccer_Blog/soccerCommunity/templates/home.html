@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해외축구갤러리</title>
+    
+    <style>
+        body{text-align: center;}
+    </style>
+
+</head>
+<body>
+    <h1>Welcome to 해축갤</h1>
+    <hr>
+    <div class="container">
+        
+        {% for article in articles %}
+            <div>
+            <h3>{{article.title}}</h3>
+            <h5>작성자 : {{article.writer}}</h5>
+            {{article.summary}} <a href="{%url 'detail' article.id %}">...자세히</a>
+            <br><br><br>
+            </div>
+        {% endfor %}
+        <br><br>
+        <hr>
+        <p>총 게시물 : {{NumOfArticle}}개</p>
+        <a href="{%url 'new'%}">새글 작성하기</a>
+    </div>
+</body>
+</html>

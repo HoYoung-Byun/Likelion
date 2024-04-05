@@ -1,0 +1,15 @@
+<h1>새로운 글 작성하기</h1>
+<hr>
+
+<form action="{%url 'create'%}" method="post"> <!--method를 post로 진행해야 get보다 보안상 안전함-->
+
+    {%csrf_token%} <!--보안상 이유로 입력-->
+    <p>제목 : <input type="text" name="title"></input></p>
+    <p>이름 : <input type="text" name="writer"></input></p>
+    본문 : <textarea name="body" id="" cols="50" rows="10"></textarea>
+    <button type="submit">submit</button>
+    <br><br>
+    <hr>
+    <a href="{%url 'home'%}">홈으로</a>
+
+</form>
