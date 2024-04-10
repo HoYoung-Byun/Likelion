@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1>게시물 수정하기</h1>
+<hr>
+
+<form action="{%url 'update' edit.id%}" method="post"> <!--method를 post로 진행해야 get보다 보안상 안전함-->
+
+    {%csrf_token%} <!--보안상 이유로 입력-->
+    <p>제목 : <input type="text" name="title" value="{{edit.title}}"></input></p>
+    <p>이름 : <input type="text" name="writer" value="{{edit.writer}}"></input></p>
+    본문 : <textarea name="body" id="" cols="50" rows="10">{{edit.body}}</textarea>
+    <button type="submit">submit</button>
+    <br><br>
+    <hr>
+    <a href="{%url 'home'%}">홈으로</a>
+
+</form>
+
+{% endblock %}
